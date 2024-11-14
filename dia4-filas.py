@@ -22,11 +22,11 @@ class FilaDePedidos:
                 if not nome:
                     os.system('clear')
                     nome_do_programa()
-                    print('Por favor, digite um nome válido para o cliente!\n')
+                    print('Por favor, insira um nome válido para o cliente!\n')
                 else:
                     break
             except ValueError:
-                print('Por favor, digite um nome válido para o cliente!\n')
+                print('Por favor, insira um nome válido para o cliente!\n')
 
         while True:
             try:
@@ -34,11 +34,11 @@ class FilaDePedidos:
                 if not prato:
                     os.system('clear')
                     nome_do_programa()
-                    print('Por favor, digite um prato válido!\n')
+                    print('Por favor, insira um prato válido!\n')
                 else:
                     break
             except ValueError:
-                print('Por favor, digite um prato válido!\n')  
+                print('Por favor, insira um prato válido!\n')  
     
         while True:
             try:
@@ -46,13 +46,13 @@ class FilaDePedidos:
                 if not mesa:
                     os.system('clear')
                     nome_do_programa()
-                    print('Por favor, digite um número válido!\n')
+                    print('Por favor, insira um número válido!\n')
                 else:
                     break
             except ValueError:
                 os.system('clear')
                 nome_do_programa()
-                print('Por favor, digite um número válido!\n')
+                print('Por favor, insira um número válido!\n')
 
         novo_pedido = Pedido(pedido, nome, prato, mesa)
         self.fila_de_pedidos.append(novo_pedido)
