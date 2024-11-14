@@ -1,76 +1,76 @@
 import os
 
 class Pedido:
-  def __init__(self, pedido, nome, prato, mesa):
-    self.pedido = pedido
-    self.nome = nome
-    self.prato = prato
-    self.mesa = mesa
-
-class FilaDePedidos:
-  def __init__(self):
-    self.fila_de_pedidos = []
-    self.proximo_pedido = 1
-
-  def adicionar_pedido(self):
-    os.system('clear')
-    nome_do_programa()
-    pedido = self.proximo_pedido
-    while True:
-      try:
-        nome = input('Nome do cliente: ').strip().capitalize()
-        if not nome:
-          os.system('clear')
-          nome_do_programa()
-          print('Por favor, digite um nome válido para o cliente!\n')
-        else:
-          break
-      except ValueError:
-        print('Por favor, digite um nome válido para o cliente!\n')
-
-    while True:
-      try:
-        prato = input('Prato desejado: ').strip().capitalize()
-        if not prato:
-          os.system('clear')
-          nome_do_programa()
-          print('Por favor, digite um prato válido!\n')
-        else:
-          break
-      except ValueError:
-        print('Por favor, digite um prato válido!\n')  
+    def __init__(self, pedido, nome, prato, mesa):
+        self.pedido = pedido
+        self.nome = nome
+        self.prato = prato
+        self.mesa = mesa
     
-    while True:
-      try:
-        mesa = int(input('Número da mesa: '))
-        if not mesa:
-          os.system('clear')
-          nome_do_programa()
-          print('Por favor, digite uma mesa válida!\n')
-        else:
-          break
-      except ValueError:
+class FilaDePedidos:
+    def __init__(self):
+        self.fila_de_pedidos = []
+        self.proximo_pedido = 1
+
+    def adicionar_pedido(self):
         os.system('clear')
         nome_do_programa()
-        print('Por favor, digite uma mesa válida!\n')
+        pedido = self.proximo_pedido
+        while True:
+            try:
+                nome = input('Nome do cliente: ').strip().capitalize()
+                if not nome:
+                    os.system('clear')
+                    nome_do_programa()
+                    print('Por favor, digite um nome válido para o cliente!\n')
+                else:
+                    break
+            except ValueError:
+                print('Por favor, digite um nome válido para o cliente!\n')
 
-    novo_pedido = Pedido(pedido, nome, prato, mesa)
-    self.fila_de_pedidos.append(novo_pedido)
-    self.proximo_pedido += 1
-    print(f'\nPedido de {nome} adicionado a fila!')
-    voltar_ao_menu_principal()
+        while True:
+            try:
+                prato = input('Prato desejado: ').strip().capitalize()
+                if not prato:
+                    os.system('clear')
+                    nome_do_programa()
+                    print('Por favor, digite um prato válido!\n')
+                else:
+                    break
+            except ValueError:
+                print('Por favor, digite um prato válido!\n')  
+    
+        while True:
+            try:
+                mesa = int(input('Número da mesa: '))
+                if not mesa:
+                    os.system('clear')
+                    nome_do_programa()
+                    print('Por favor, digite uma mesa válida!\n')
+                else:
+                    break
+            except ValueError:
+                os.system('clear')
+                nome_do_programa()
+                print('Por favor, digite uma mesa válida!\n')
 
-  def remover_pedido(self):
-    if len(self.fila_de_pedidos) < 1:
-      return None
-    return self.fila_de_pedidos.pop(0)
+        novo_pedido = Pedido(pedido, nome, prato, mesa)
+        self.fila_de_pedidos.append(novo_pedido)
+        self.proximo_pedido += 1
+        print(f'\nPedido de {nome} adicionado a fila!')
+        voltar_ao_menu_principal()
 
-  def mostrar_pedidos(self):
-    if len(self.fila_de_pedidos) < 1:
-      print('Não há pedidos no momento!')
-      return
-    for pedido in self.fila_de_pedidos:
-      print(f'Número: {pedido.pedido} | Nome: {pedido.nome} | Prato: {pedido.prato} | Mesa: {pedido.mesa}')
+    def remover_pedido(self):
+        if len(self.fila_de_pedidos) < 1:
+            return None
+        return self.fila_de_pedidos.pop(0)
+
+    def mostrar_pedidos(self):
+        if len(self.fila_de_pedidos) < 1:
+            print('Não há pedidos no momento!')
+            return
+        for pedido in self.fila_de_pedidos:
+            print(f'Número: {pedido.pedido} | Nome: {pedido.nome} | Prato: {pedido.prato} | Mesa: {pedido.mesa}')
 
 def nome_do_programa():
     print('Ｃｏｎｔｒｏｌｅ ｄｅ Ｐｅｄｉｄｏｓ 📝\n')
