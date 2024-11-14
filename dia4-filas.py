@@ -46,13 +46,13 @@ class FilaDePedidos:
                 if not mesa:
                     os.system('clear')
                     nome_do_programa()
-                    print('Por favor, digite uma mesa válida!\n')
+                    print('Por favor, digite um número válido!\n')
                 else:
                     break
             except ValueError:
                 os.system('clear')
                 nome_do_programa()
-                print('Por favor, digite uma mesa válida!\n')
+                print('Por favor, digite um número válido!\n')
 
         novo_pedido = Pedido(pedido, nome, prato, mesa)
         self.fila_de_pedidos.append(novo_pedido)
